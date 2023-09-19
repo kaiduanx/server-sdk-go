@@ -88,6 +88,10 @@ func (c *SignalClient) Join(urlPrefix string, token string, params *ConnectParam
 	if params.Reconnect {
 		urlSuffix += "&reconnect=1"
 	}
+	if params.TraceId != "" {
+		urlSuffix += "&trace_id="
+		urlSuffix += params.TraceId
+	}
 	urlSuffix += getStatsParamString()
 
 	u, err := url.Parse(urlPrefix + urlSuffix)

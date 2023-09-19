@@ -64,6 +64,7 @@ type ConnectInfo struct {
 type ConnectParams struct {
 	AutoSubscribe bool
 	Reconnect     bool
+	TraceId       string
 	Callback      *RoomCallback
 }
 
